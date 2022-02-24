@@ -3,6 +3,7 @@ package com.example.firebasesetupdemo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -63,6 +64,8 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(getApplicationContext(), "Registration was successful :)", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this,StartActivity.class));
+                    finish();
                 } else {
                     Toast.makeText(RegisterActivity.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
                 }
