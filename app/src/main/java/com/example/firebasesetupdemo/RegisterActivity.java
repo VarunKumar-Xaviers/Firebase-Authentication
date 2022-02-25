@@ -50,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (txtPassword.length() < 6) {
                     Toast.makeText(getApplicationContext(), "Password is too short.", Toast.LENGTH_SHORT).show();
                 } else {
+//                    Method call
                     registerUser(txtEmail, txtPassword);
                 }
             }

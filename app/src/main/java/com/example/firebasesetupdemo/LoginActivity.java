@@ -44,6 +44,10 @@ FirebaseAuth auth;
             Toast.makeText(LoginActivity.this, "Login was successfull", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginActivity.this,MainActivity.class));
             finish();
-        });
+        })
+        .addOnFailureListener(authResult ->{
+            Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+
+        } );
     }
 }
